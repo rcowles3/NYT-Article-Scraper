@@ -1,8 +1,9 @@
 import React from "react";
 
 // Import sub-components
-import Saved from "./children/Saved";
 import Search from "./children/Search";
+import Footer from "./Footer";
+// import Results from "./children/Results";
 
 // Helper Function
 // import helpers from "./utils/helpers";
@@ -47,32 +48,20 @@ class Main extends React.Component {
     return (
 
       <div className="container">
-        <div className="row">
-          <div className="jumbotron">
-            <h2 className="text-center">Address Finder!</h2>
-            <p className="text-center">
-              <em>Enter a landmark to search for its exact address (ex: "Eiffel Tower").</em>
-            </p>
-          </div>
 
-          <div className="col-md-6">
-
-            <Form setTerm={this.setTerm} />
-
-          </div>
-
-          <div className="col-md-6">
-
-            <Results address={this.state.results} />
-
-          </div>
-
+        <div className="jumbotron">
+          <h2 className="text-center">New York Times Article Search!</h2>
         </div>
-
+        <div className="col-md-12">
+          <Search setTerm={this.setTerm} />
+        </div>
+        <div className="col-md-12">
+          <Footer />
+        </div>
       </div>
     );
   }
 }
 
-// Export the componen back for use in other files
+// Export the component back for use in other files
 export default Main;
